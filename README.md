@@ -10,10 +10,10 @@ and Merlin plugins from the `PATH`.
 - install using `Vundle` or `NeoBundle`.
 
         " Or if using NeoBundle(recommended)
-        NeoBundle 'jordwalke/vim-reason-loader'
+        NeoBundle 'reasonml/vim-reason-loader'
 
         " Using Vundle
-        Bundle 'jordwalke/vim-reason-loader'
+        Bundle 'reasonml/vim-reason-loader'
 
 **Usage**
 
