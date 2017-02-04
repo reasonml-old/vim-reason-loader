@@ -66,6 +66,11 @@ function! s:lines(msg)
 endfunction
 
 
+" For some reason this was needed when the binaries ocamlmerlin/refmt were
+" symlinks.
+function! s:trimStr(string)
+  return substitute(a:string, '\n\+$', '', '')
+endfunction
 
 " vim-reason-loader code
 " =============
@@ -74,14 +79,14 @@ endfunction
 " Vim-Plug in order to reuse Vim-Plug's lazy loading code.
 if executable('ocamlmerlin')
   " To set the log file and restart:
-  let s:ocamlmerlin=substitute(system('which ocamlmerlin'),'ocamlmerlin\n$','','') . "../share/merlin/vim/"
+  let s:ocamlmerlin=substitute(resolve(s:trimStr(system('which ocamlmerlin'))),'ocamlmerlin$','','') . "../share/merlin/vim/"
   execute "set rtp+=".s:ocamlmerlin
   let g:syntastic_ocaml_checkers=['merlin']
   let g:plugs_vimreasonloader['merlin'] = {'dir': (s:dirpath(s:ocamlmerlin))}
 endif
 
 if executable('refmt')
-  let s:reason=substitute(system('which refmt'),'refmt\n$','','') . "../share/reason/editorSupport/VimReason"
+  let s:reason=substitute(resolve(s:trimStr(system('which refmt'))),'refmt$','','') . "../share/reason/editorSupport/VimReason"
   execute "set rtp+=".s:reason
   let g:syntastic_reason_checkers=['merlin']
   let g:plugs_vimreasonloader['VimReason'] = {'dir': (s:dirpath(s:reason))}
