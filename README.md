@@ -53,4 +53,4 @@ that you can depend on easily like any other Vim plugin.
 - Colors Aren't Appearing
   - If you're using a combination of zsh and nvim, you may run into an issue where
 the correct shell will load, but colors won't display correctly.
-  - You can try to fix this by setting `set shell=/bin/bash` in your Neovim config.
+  - You can try to fix this by setting `set shell=/bin/sh` in your Neovim config.
