@@ -15,6 +15,9 @@ and Merlin plugins from the `PATH`.
         " Using Vundle
         Bundle 'reasonml/vim-reason-loader'
 
+        " Using Vim Plug
+        Plug 'reasonml/vim-reason-loader'
+
 **Usage**
 
 It's really simple: when you start `vim`, make sure that the `PATH` environment
@@ -44,3 +47,10 @@ the Vim plugins for the specific versions of `Reason` / `Merlin` that you are
 working on. This scripts wraps that short, but messy logic into one Vim plugin
 that you can depend on easily like any other Vim plugin.
 
+
+**Troubleshooting**
+
+- Colors Aren't Appearing
+  - If you're using a combination of zsh and nvim, you may run into an issue where
+the correct shell will load, but colors won't display correctly.
+  - You can try to fix this by setting `set shell=/bin/sh` in your Neovim config.
