@@ -100,7 +100,7 @@ function! s:glob(from, pattern)
   " if the directory has node_modules in it and your wildignore includes node_modules.
   " The second arg (0): Says don't return in form of a list
   " The third arg (1): Says follow symlinks
-  return s:lines(globpath(a:from, a:pattern, 1, 0, 1))
+  return s:lines(globpath(a:from, a:pattern, 1))
 endfunction
 
 
