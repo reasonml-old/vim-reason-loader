@@ -1,8 +1,10 @@
 vim-reason-loader
 ================
+
+## Currently deprecated. Please use [vim-reason](https://github.com/reasonml/vim-reason) instead!
+
 Vim plugin that loads the *real* [Reason](https://github.com/facebook/reason)
 and Merlin plugins from the `PATH`.
-
 
 
 **Installation**
